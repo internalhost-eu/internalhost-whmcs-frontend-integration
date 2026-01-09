@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output (regenerated on build)
+# Uncomment if you don't want to commit compiled CSS
+# templates/internalhost/css/styles.css
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*

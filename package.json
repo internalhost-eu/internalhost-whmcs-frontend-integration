@@ -1,0 +1,14 @@
+{
+  "name": "internalhost-whmcs-template",
+  "version": "1.0.0",
+  "description": "Custom WHMCS template voor Internalhost - For the crazy ones.",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./templates/internalhost/css/styles.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./templates/internalhost/css/styles.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  },
+  "author": "Internalhost",
+  "license": "UNLICENSED"
+}

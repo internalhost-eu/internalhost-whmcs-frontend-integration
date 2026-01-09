@@ -1,0 +1,39 @@
+# INTERNALHOST WHMCS Template
+# For the crazy ones.
+
+name: "Internalhost"
+version: "1.0.0"
+author: "Internalhost"
+license: "proprietary"
+
+# Template settings
+settings:
+  # Logo
+  logo: "images/logo.svg"
+  logoWidth: "180"
+  
+  # Kleuren (voor WHMCS admin reference)
+  primaryColor: "#334155"
+  accentColor: "#EA580C"
+  
+  # Features
+  showSidebar: true
+  stickyHeader: true
+  
+  # Social links (optioneel)
+  social:
+    github: "https://github.com/internalhost"
+    mastodon: ""
+    twitter: ""
+
+# Asset paths
+assets:
+  css:
+    - "css/styles.css"
+  js:
+    - "js/main.js"
+
+# WHMCS versie compatibiliteit
+whmcs:
+  minimum: "8.0"
+  tested: "8.10"

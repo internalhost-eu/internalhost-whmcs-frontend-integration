@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * INTERNALHOST - Custom Styles
+ * For the crazy ones.
+ */
+
+@layer base {
+  /* Import Inter font */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-white text-ih-body font-sans;
+  }
+
+  /* Headings */
+  h1 { @apply text-h1 text-ih-primary; }
+  h2 { @apply text-h2 text-ih-primary; }
+  h3 { @apply text-h3 text-ih-primary; }
+
+  /* Links */
+  a {
+    @apply text-ih-accent hover:underline transition-colors;
+  }
+
+  /* Code blocks */
+  code, pre {
+    @apply font-mono bg-ih-light rounded px-1.5 py-0.5 text-sm;
+  }
+
+  pre {
+    @apply p-4 overflow-x-auto;
+  }
+}
+
+@layer components {
+  /* Primary Button - Orange accent */
+  .btn-primary {
+    @apply inline-flex items-center justify-center 
+           px-6 py-3 
+           bg-ih-accent text-white font-semibold 
+           rounded-lg
+           hover:bg-orange-700 
+           transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-ih-accent focus:ring-offset-2;
+  }
+
+  /* Secondary Button - Outlined */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center 
+           px-6 py-3 
+           bg-transparent text-ih-primary font-semibold 
+           border-2 border-ih-primary
+           rounded-lg
+           hover:bg-ih-primary hover:text-white
+           transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-ih-primary focus:ring-offset-2;
+  }
+
+  /* Card component */
+  .card {
+    @apply bg-white rounded-xl border border-gray-200 p-6
+           hover:border-ih-accent/30 hover:shadow-lg
+           transition-all duration-200;
+  }
+
+  /* Product card */
+  .product-card {
+    @apply card;
+  }
+
+  .product-card-title {
+    @apply text-h2 text-ih-primary mb-2;
+  }
+
+  .product-card-tagline {
+    @apply text-ih-secondary text-sm;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-ih-body hover:text-ih-accent 
+           px-4 py-2 
+           font-medium
+           transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-ih-accent;
+  }
+
+  /* Hero section */
+  .hero {
+    @apply bg-ih-light py-20 px-6;
+  }
+
+  .hero-title {
+    @apply text-display text-ih-primary mb-4;
+  }
+
+  .hero-subtitle {
+    @apply text-lg text-ih-secondary max-w-2xl;
+  }
+
+  /* Alert/Notice boxes */
+  .alert {
+    @apply p-4 rounded-lg border-l-4;
+  }
+
+  .alert-info {
+    @apply alert bg-ih-light-accent border-ih-accent text-ih-body;
+  }
+
+  .alert-success {
+    @apply alert bg-emerald-50 border-ih-success text-emerald-800;
+  }
+
+  .alert-error {
+    @apply alert bg-red-50 border-ih-error text-red-800;
+  }
+
+  /* Terminal/Code block styling */
+  .terminal {
+    @apply bg-ih-primary text-gray-100 font-mono 
+           rounded-lg p-4 overflow-x-auto
+           text-sm leading-relaxed;
+  }
+
+  .terminal-prompt::before {
+    content: "$ ";
+    @apply text-ih-accent;
+  }
+
+  /* Pricing table */
+  .pricing-card {
+    @apply card text-center;
+  }
+
+  .pricing-card-featured {
+    @apply pricing-card border-ih-accent border-2 relative;
+  }
+
+  .pricing-card-featured::before {
+    content: "Populair";
+    @apply absolute -top-3 left-1/2 -translate-x-1/2
+           bg-ih-accent text-white text-xs font-semibold
+           px-3 py-1 rounded-full;
+  }
+
+  /* Form inputs */
+  .input {
+    @apply w-full px-4 py-3 
+           border border-gray-300 rounded-lg
+           text-ih-body
+           focus:outline-none focus:ring-2 focus:ring-ih-accent focus:border-transparent
+           transition-colors duration-200;
+  }
+
+  .input-label {
+    @apply block text-sm font-medium text-ih-primary mb-2;
+  }
+
+  /* Footer */
+  .footer {
+    @apply bg-ih-primary text-gray-300 py-12;
+  }
+
+  .footer a {
+    @apply text-gray-300 hover:text-white;
+  }
+}
+
+@layer utilities {
+  /* Internalhost specific utilities */
+  .text-gradient {
+    @apply bg-gradient-to-r from-ih-primary to-ih-accent 
+           bg-clip-text text-transparent;
+  }
+
+  /* Status indicators */
+  .status-online {
+    @apply inline-flex items-center gap-2;
+  }
+
+  .status-online::before {
+    content: "";
+    @apply w-2 h-2 bg-ih-success rounded-full animate-pulse;
+  }
+
+  .status-offline::before {
+    content: "";
+    @apply w-2 h-2 bg-ih-error rounded-full;
+  }
+}
